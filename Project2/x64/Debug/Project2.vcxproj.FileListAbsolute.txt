@@ -4,3 +4,7 @@ C:\Users\TanLi\Desktop\Project2\Project2\x64\Debug\Project2.MyForm.resources
 C:\Users\TanLi\Desktop\Project2\Project2\x64\Debug\Project2.vcxproj.GenerateResource.cache
 C:\Users\TanLi\Desktop\Project2\Project2\x64\Debug\Project2.LoginForm.resources
 C:\Users\TanLi\Desktop\Project2\Project2\x64\Debug\Project2.RenderForm.resources
+C:\Users\TanLi\OneDrive\Desktop\Actual Coursework Maybe\Project2\x64\Debug\Project2.vcxproj.AssemblyReference.cache
+C:\Users\TanLi\OneDrive\Desktop\Actual Coursework Maybe\Project2\x64\Debug\Project2.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\TanLi\OneDrive\Desktop\Actual Coursework Maybe\Project2\x64\Debug\Project2.MyForm.resources
+C:\Users\TanLi\OneDrive\Desktop\Actual Coursework Maybe\Project2\x64\Debug\Project2.vcxproj.GenerateResource.cache
