@@ -22,9 +22,9 @@ namespace Project2 {
 			//TODO: Add the constructor code here
 			//
 
-			//logInToolTip->SetToolTip(logInButton, "Log in and access your saved objects.");
-			//quickRenderToolTip->SetToolTip(quickRenderButton, "Upload an object to render it or access saved public objects.");
-			//quitToolTip->SetToolTip(quitButton, "Quit the application.");
+			logInToolTip->SetToolTip(logInButton, "Log in and access your saved objects.");
+			quickRenderToolTip->SetToolTip(quickRenderButton, "Upload an object to render it or access saved public objects.");
+			quitToolTip->SetToolTip(quitButton, "Quit the application.");
 		}
 
 	protected:
@@ -79,12 +79,12 @@ namespace Project2 {
 			this->quickRenderToolTip = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->quitToolTip = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->startUpGroup = (gcnew System::Windows::Forms::GroupBox());
-			this->loginGroup = (gcnew System::Windows::Forms::GroupBox());
 			this->authorLabel = (gcnew System::Windows::Forms::Label());
 			this->welcomeLabel = (gcnew System::Windows::Forms::Label());
 			this->quitButton = (gcnew System::Windows::Forms::Button());
 			this->quickRenderButton = (gcnew System::Windows::Forms::Button());
 			this->logInButton = (gcnew System::Windows::Forms::Button());
+			this->loginGroup = (gcnew System::Windows::Forms::GroupBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->startUpGroup->SuspendLayout();
 			this->loginGroup->SuspendLayout();
@@ -92,7 +92,6 @@ namespace Project2 {
 			// 
 			// startUpGroup
 			// 
-			//this->startUpGroup->Controls->Add(this->loginGroup);
 			this->startUpGroup->Controls->Add(this->authorLabel);
 			this->startUpGroup->Controls->Add(this->welcomeLabel);
 			this->startUpGroup->Controls->Add(this->quitButton);
@@ -104,18 +103,6 @@ namespace Project2 {
 			this->startUpGroup->TabIndex = 4;
 			this->startUpGroup->TabStop = false;
 			this->startUpGroup->Text = L"groupBox1";
-			this->startUpGroup->Visible = false;
-			// 
-			// loginGroup
-			// 
-			this->loginGroup->Controls->Add(this->label1);
-			this->loginGroup->Location = System::Drawing::Point(-7, -31);
-			this->loginGroup->Name = L"loginGroup";
-			this->loginGroup->Size = System::Drawing::Size(1000, 500);
-			this->loginGroup->TabIndex = 7;
-			this->loginGroup->TabStop = false;
-			this->loginGroup->Text = L"groupBox1";
-			this->loginGroup->Visible = true;
 			// 
 			// authorLabel
 			// 
@@ -180,6 +167,18 @@ namespace Project2 {
 			this->logInButton->Text = L"Login";
 			this->logInButton->UseVisualStyleBackColor = true;
 			this->logInButton->Click += gcnew System::EventHandler(this, &MyForm::loginButton_Click);
+			this->logInButton->MouseHover += gcnew System::EventHandler(this, &MyForm::logInButton_MouseHover);
+			// 
+			// loginGroup
+			// 
+			this->loginGroup->Controls->Add(this->label1);
+			this->loginGroup->Location = System::Drawing::Point(-7, -31);
+			this->loginGroup->Name = L"loginGroup";
+			this->loginGroup->Size = System::Drawing::Size(1000, 500);
+			this->loginGroup->TabIndex = 7;
+			this->loginGroup->TabStop = false;
+			this->loginGroup->Text = L"groupBox1";
+			this->loginGroup->Visible = false;
 			// 
 			// label1
 			// 
@@ -222,6 +221,9 @@ namespace Project2 {
 		Close();
 	}
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void logInButton_MouseHover(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }
