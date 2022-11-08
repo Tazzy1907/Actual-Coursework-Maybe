@@ -21,10 +21,6 @@ namespace Project2 {
 			//
 			//TODO: Add the constructor code here
 			//
-
-			logInToolTip->SetToolTip(logInButton, "Log in and access your saved objects.");
-			quickRenderToolTip->SetToolTip(quickRenderButton, "Upload an object to render it or access saved public objects.");
-			quitToolTip->SetToolTip(quitButton, "Quit the application.");
 		}
 
 	protected:
@@ -38,10 +34,6 @@ namespace Project2 {
 				delete components;
 			}
 		}
-
-	private: System::Windows::Forms::ToolTip^ logInToolTip;
-	private: System::Windows::Forms::ToolTip^ quickRenderToolTip;
-	private: System::Windows::Forms::ToolTip^ quitToolTip;
 	
 	// Contents of the startUpGroup GroupBox
 	private: System::Windows::Forms::GroupBox^ startUpGroup;
@@ -53,9 +45,14 @@ namespace Project2 {
 
 	// Contents of the loginGroup GroupBox
 	private: System::Windows::Forms::GroupBox^ loginGroup;
-	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ loginLabel;
 
-
+	private: System::Windows::Forms::TextBox^ usernameBox;
+	private: System::Windows::Forms::TextBox^ passwordBox;
+	private: System::Windows::Forms::Button^ loginButton1;
+	private: System::Windows::Forms::Button^ quitButton1;
+	private: System::Windows::Forms::Button^ loginBackButton;
+	private: System::Windows::Forms::ToolTip^ genericToolTip;
 
 	private: System::ComponentModel::IContainer^ components;
 	protected:
@@ -75,20 +72,49 @@ namespace Project2 {
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
-			this->logInToolTip = (gcnew System::Windows::Forms::ToolTip(this->components));
-			this->quickRenderToolTip = (gcnew System::Windows::Forms::ToolTip(this->components));
-			this->quitToolTip = (gcnew System::Windows::Forms::ToolTip(this->components));
+			this->quitButton = (gcnew System::Windows::Forms::Button());
+			this->quickRenderButton = (gcnew System::Windows::Forms::Button());
 			this->startUpGroup = (gcnew System::Windows::Forms::GroupBox());
 			this->authorLabel = (gcnew System::Windows::Forms::Label());
 			this->welcomeLabel = (gcnew System::Windows::Forms::Label());
-			this->quitButton = (gcnew System::Windows::Forms::Button());
-			this->quickRenderButton = (gcnew System::Windows::Forms::Button());
 			this->logInButton = (gcnew System::Windows::Forms::Button());
 			this->loginGroup = (gcnew System::Windows::Forms::GroupBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->loginBackButton = (gcnew System::Windows::Forms::Button());
+			this->loginButton1 = (gcnew System::Windows::Forms::Button());
+			this->quitButton1 = (gcnew System::Windows::Forms::Button());
+			this->passwordBox = (gcnew System::Windows::Forms::TextBox());
+			this->usernameBox = (gcnew System::Windows::Forms::TextBox());
+			this->loginLabel = (gcnew System::Windows::Forms::Label());
+			this->genericToolTip = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->startUpGroup->SuspendLayout();
 			this->loginGroup->SuspendLayout();
 			this->SuspendLayout();
+			// 
+			// quitButton
+			// 
+			this->quitButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->quitButton->Location = System::Drawing::Point(675, 150);
+			this->quitButton->Name = L"quitButton";
+			this->quitButton->Size = System::Drawing::Size(300, 200);
+			this->quitButton->TabIndex = 4;
+			this->quitButton->Text = L"Quit";
+			this->genericToolTip->SetToolTip(this->quitButton, L"Quit the application.");
+			this->quitButton->UseVisualStyleBackColor = true;
+			this->quitButton->Click += gcnew System::EventHandler(this, &MyForm::quitButton_Click);
+			// 
+			// quickRenderButton
+			// 
+			this->quickRenderButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->quickRenderButton->Location = System::Drawing::Point(350, 150);
+			this->quickRenderButton->Name = L"quickRenderButton";
+			this->quickRenderButton->Size = System::Drawing::Size(300, 200);
+			this->quickRenderButton->TabIndex = 3;
+			this->quickRenderButton->Text = L"Quick Render";
+			this->genericToolTip->SetToolTip(this->quickRenderButton, L"Upload an object to render it or access saved public objects.");
+			this->quickRenderButton->UseVisualStyleBackColor = true;
+			this->quickRenderButton->Click += gcnew System::EventHandler(this, &MyForm::quickRenderButton_Click);
 			// 
 			// startUpGroup
 			// 
@@ -132,30 +158,6 @@ namespace Project2 {
 			this->welcomeLabel->UseCompatibleTextRendering = true;
 			this->welcomeLabel->UseMnemonic = false;
 			// 
-			// quitButton
-			// 
-			this->quitButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->quitButton->Location = System::Drawing::Point(675, 150);
-			this->quitButton->Name = L"quitButton";
-			this->quitButton->Size = System::Drawing::Size(300, 200);
-			this->quitButton->TabIndex = 4;
-			this->quitButton->Text = L"Quit";
-			this->quitButton->UseVisualStyleBackColor = true;
-			this->quitButton->Click += gcnew System::EventHandler(this, &MyForm::quitButton_Click);
-			// 
-			// quickRenderButton
-			// 
-			this->quickRenderButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->quickRenderButton->Location = System::Drawing::Point(350, 150);
-			this->quickRenderButton->Name = L"quickRenderButton";
-			this->quickRenderButton->Size = System::Drawing::Size(300, 200);
-			this->quickRenderButton->TabIndex = 3;
-			this->quickRenderButton->Text = L"Quick Render";
-			this->quickRenderButton->UseVisualStyleBackColor = true;
-			this->quickRenderButton->Click += gcnew System::EventHandler(this, &MyForm::quickRenderButton_Click);
-			// 
 			// logInButton
 			// 
 			this->logInButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -165,13 +167,18 @@ namespace Project2 {
 			this->logInButton->Size = System::Drawing::Size(300, 200);
 			this->logInButton->TabIndex = 2;
 			this->logInButton->Text = L"Login";
+			this->genericToolTip->SetToolTip(this->logInButton, L"Log in and access your saved objects.");
 			this->logInButton->UseVisualStyleBackColor = true;
 			this->logInButton->Click += gcnew System::EventHandler(this, &MyForm::loginButton_Click);
-			this->logInButton->MouseHover += gcnew System::EventHandler(this, &MyForm::logInButton_MouseHover);
 			// 
 			// loginGroup
 			// 
-			this->loginGroup->Controls->Add(this->label1);
+			this->loginGroup->Controls->Add(this->loginBackButton);
+			this->loginGroup->Controls->Add(this->loginButton1);
+			this->loginGroup->Controls->Add(this->quitButton1);
+			this->loginGroup->Controls->Add(this->passwordBox);
+			this->loginGroup->Controls->Add(this->usernameBox);
+			this->loginGroup->Controls->Add(this->loginLabel);
 			this->loginGroup->Location = System::Drawing::Point(-7, -31);
 			this->loginGroup->Name = L"loginGroup";
 			this->loginGroup->Size = System::Drawing::Size(1000, 500);
@@ -180,15 +187,74 @@ namespace Project2 {
 			this->loginGroup->Text = L"groupBox1";
 			this->loginGroup->Visible = false;
 			// 
-			// label1
+			// loginBackButton
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(304, 165);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(328, 13);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"THIS IS EXEMPLAR TEXT THAT SHHOULD HOPEFULLY SHOW";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
+			this->loginBackButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->loginBackButton->Location = System::Drawing::Point(25, 50);
+			this->loginBackButton->Name = L"loginBackButton";
+			this->loginBackButton->Size = System::Drawing::Size(150, 50);
+			this->loginBackButton->TabIndex = 7;
+			this->loginBackButton->Text = L"Back";
+			this->loginBackButton->UseVisualStyleBackColor = true;
+			this->loginBackButton->Click += gcnew System::EventHandler(this, &MyForm::loginBackButton_Click);
+			// 
+			// loginButton1
+			// 
+			this->loginButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->loginButton1->Location = System::Drawing::Point(350, 250);
+			this->loginButton1->Name = L"loginButton1";
+			this->loginButton1->Size = System::Drawing::Size(150, 50);
+			this->loginButton1->TabIndex = 6;
+			this->loginButton1->Text = L"Login";
+			this->loginButton1->UseVisualStyleBackColor = true;
+			// 
+			// quitButton1
+			// 
+			this->quitButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->quitButton1->Location = System::Drawing::Point(500, 250);
+			this->quitButton1->Name = L"quitButton1";
+			this->quitButton1->Size = System::Drawing::Size(150, 50);
+			this->quitButton1->TabIndex = 5;
+			this->quitButton1->Text = L"Quit";
+			this->quitButton1->UseVisualStyleBackColor = true;
+			this->quitButton1->Click += gcnew System::EventHandler(this, &MyForm::quitButton_Click);
+			// 
+			// passwordBox
+			// 
+			this->passwordBox->Location = System::Drawing::Point(425, 175);
+			this->passwordBox->MaxLength = 20;
+			this->passwordBox->Name = L"passwordBox";
+			this->passwordBox->Size = System::Drawing::Size(150, 20);
+			this->passwordBox->TabIndex = 2;
+			this->passwordBox->Text = L"Password";
+			this->passwordBox->Enter += gcnew System::EventHandler(this, &MyForm::passwordBox_Enter);
+			this->passwordBox->Leave += gcnew System::EventHandler(this, &MyForm::passwordBox_Leave);
+			// 
+			// usernameBox
+			// 
+			this->usernameBox->Location = System::Drawing::Point(425, 150);
+			this->usernameBox->MaxLength = 20;
+			this->usernameBox->Name = L"usernameBox";
+			this->usernameBox->Size = System::Drawing::Size(150, 20);
+			this->usernameBox->TabIndex = 1;
+			this->usernameBox->Text = L"Username";
+			this->usernameBox->Enter += gcnew System::EventHandler(this, &MyForm::usernameBox_Enter);
+			this->usernameBox->Leave += gcnew System::EventHandler(this, &MyForm::usernameBox_Leave);
+			// 
+			// loginLabel
+			// 
+			this->loginLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Pixel,
+				static_cast<System::Byte>(0)));
+			this->loginLabel->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->loginLabel->Location = System::Drawing::Point(150, 50);
+			this->loginLabel->Name = L"loginLabel";
+			this->loginLabel->Size = System::Drawing::Size(700, 70);
+			this->loginLabel->TabIndex = 0;
+			this->loginLabel->Text = L"Login Page";
+			this->loginLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MyForm
 			// 
@@ -200,8 +266,11 @@ namespace Project2 {
 			this->Controls->Add(this->loginGroup);
 			this->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(1000, 500);
+			this->MinimumSize = System::Drawing::Size(1000, 500);
 			this->Name = L"MyForm";
-			this->Text = L"Welcome Menu";
+			this->Text = L"My A-Level Coursework";
 			this->startUpGroup->ResumeLayout(false);
 			this->loginGroup->ResumeLayout(false);
 			this->loginGroup->PerformLayout();
@@ -220,10 +289,28 @@ namespace Project2 {
 	private: System::Void quitButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		Close();
 	}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void logInButton_MouseHover(System::Object^ sender, System::EventArgs^ e) {
 
+private: System::Void usernameBox_Enter(System::Object^ sender, System::EventArgs^ e) {
+	usernameBox->Text = "";
+}
+private: System::Void usernameBox_Leave(System::Object^ sender, System::EventArgs^ e) {
+	if (usernameBox->Text == "") {
+		usernameBox->Text = "Username";
+	}
+}
+private: System::Void passwordBox_Enter(System::Object^ sender, System::EventArgs^ e) {
+	passwordBox->PasswordChar = '*';
+	passwordBox->Text = "";
+}
+private: System::Void passwordBox_Leave(System::Object^ sender, System::EventArgs^ e) {
+	if (passwordBox->Text == "") {
+		passwordBox->PasswordChar = false;
+		passwordBox->Text = "Password";
+	}
+}
+private: System::Void loginBackButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	loginGroup->Visible = false;
+	startUpGroup->Visible = true;
 }
 };
 }
