@@ -46,13 +46,14 @@ namespace Project2 {
 	// Contents of the loginGroup GroupBox
 	private: System::Windows::Forms::GroupBox^ loginGroup;
 	private: System::Windows::Forms::Label^ loginLabel;
-
 	private: System::Windows::Forms::TextBox^ usernameBox;
 	private: System::Windows::Forms::TextBox^ passwordBox;
 	private: System::Windows::Forms::Button^ loginButton1;
 	private: System::Windows::Forms::Button^ quitButton1;
 	private: System::Windows::Forms::Button^ loginBackButton;
 	private: System::Windows::Forms::ToolTip^ genericToolTip;
+	private: System::Windows::Forms::Label^ loginMessage;
+	private: System::Windows::Forms::Button^ signUp;
 
 	private: System::ComponentModel::IContainer^ components;
 	protected:
@@ -79,6 +80,8 @@ namespace Project2 {
 			this->welcomeLabel = (gcnew System::Windows::Forms::Label());
 			this->logInButton = (gcnew System::Windows::Forms::Button());
 			this->loginGroup = (gcnew System::Windows::Forms::GroupBox());
+			this->signUp = (gcnew System::Windows::Forms::Button());
+			this->loginMessage = (gcnew System::Windows::Forms::Label());
 			this->loginBackButton = (gcnew System::Windows::Forms::Button());
 			this->loginButton1 = (gcnew System::Windows::Forms::Button());
 			this->quitButton1 = (gcnew System::Windows::Forms::Button());
@@ -173,6 +176,8 @@ namespace Project2 {
 			// 
 			// loginGroup
 			// 
+			this->loginGroup->Controls->Add(this->signUp);
+			this->loginGroup->Controls->Add(this->loginMessage);
 			this->loginGroup->Controls->Add(this->loginBackButton);
 			this->loginGroup->Controls->Add(this->loginButton1);
 			this->loginGroup->Controls->Add(this->quitButton1);
@@ -186,6 +191,30 @@ namespace Project2 {
 			this->loginGroup->TabStop = false;
 			this->loginGroup->Text = L"groupBox1";
 			this->loginGroup->Visible = false;
+			// 
+			// signUp
+			// 
+			this->signUp->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->signUp->Location = System::Drawing::Point(425, 306);
+			this->signUp->Name = L"signUp";
+			this->signUp->Size = System::Drawing::Size(150, 50);
+			this->signUp->TabIndex = 9;
+			this->signUp->Text = L"Sign Up";
+			this->genericToolTip->SetToolTip(this->signUp, L"Sign up to the application using your email and password");
+			this->signUp->UseVisualStyleBackColor = true;
+			// 
+			// loginMessage
+			// 
+			this->loginMessage->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Pixel,
+				static_cast<System::Byte>(0)));
+			this->loginMessage->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->loginMessage->Location = System::Drawing::Point(300, 200);
+			this->loginMessage->Name = L"loginMessage";
+			this->loginMessage->Size = System::Drawing::Size(400, 30);
+			this->loginMessage->TabIndex = 8;
+			this->loginMessage->Text = L"Enter your details above!";
+			this->loginMessage->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// loginBackButton
 			// 
@@ -209,6 +238,7 @@ namespace Project2 {
 			this->loginButton1->TabIndex = 6;
 			this->loginButton1->Text = L"Login";
 			this->loginButton1->UseVisualStyleBackColor = true;
+			this->loginButton1->Click += gcnew System::EventHandler(this, &MyForm::loginButton1_Click);
 			// 
 			// quitButton1
 			// 
@@ -219,6 +249,7 @@ namespace Project2 {
 			this->quitButton1->Size = System::Drawing::Size(150, 50);
 			this->quitButton1->TabIndex = 5;
 			this->quitButton1->Text = L"Quit";
+			this->genericToolTip->SetToolTip(this->quitButton1, L"Quit the application.");
 			this->quitButton1->UseVisualStyleBackColor = true;
 			this->quitButton1->Click += gcnew System::EventHandler(this, &MyForm::quitButton_Click);
 			// 
@@ -262,8 +293,8 @@ namespace Project2 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::AliceBlue;
 			this->ClientSize = System::Drawing::Size(984, 461);
-			this->Controls->Add(this->startUpGroup);
 			this->Controls->Add(this->loginGroup);
+			this->Controls->Add(this->startUpGroup);
 			this->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
@@ -283,7 +314,7 @@ namespace Project2 {
 		loginGroup->Visible = true;
 	}
 	private: System::Void quickRenderButton_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		MessageBox::Show("This has not yet been added to the application.","Pending Update", MessageBoxButtons::OK);
 	}
 
 	private: System::Void quitButton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -311,6 +342,9 @@ private: System::Void passwordBox_Leave(System::Object^ sender, System::EventArg
 private: System::Void loginBackButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	loginGroup->Visible = false;
 	startUpGroup->Visible = true;
+}
+private: System::Void loginButton1_Click(System::Object^ sender, System::EventArgs^ e) {
+	loginMessage->Text = "Your username and password are incorrect";
 }
 };
 }
