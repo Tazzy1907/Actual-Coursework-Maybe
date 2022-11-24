@@ -54,6 +54,22 @@ namespace Project2 {
 	private: System::Windows::Forms::ToolTip^ genericToolTip;
 	private: System::Windows::Forms::Label^ loginMessage;
 	private: System::Windows::Forms::Button^ signUp;
+	private: System::Windows::Forms::GroupBox^ signUpGroup;
+	private: System::Windows::Forms::Label^ signUpLabel;
+	private: System::Windows::Forms::Button^ signUpBackButton;
+	private: System::Windows::Forms::Button^ signUpConfirmButton;
+
+
+	private: System::Windows::Forms::TextBox^ signUpConfirmPasswordBox;
+
+	private: System::Windows::Forms::TextBox^ signUpPasswordBox;
+
+	private: System::Windows::Forms::TextBox^ signUpUsernameBox;
+
+
+
+
+
 
 	private: System::ComponentModel::IContainer^ components;
 	protected:
@@ -77,8 +93,8 @@ namespace Project2 {
 			this->quickRenderButton = (gcnew System::Windows::Forms::Button());
 			this->startUpGroup = (gcnew System::Windows::Forms::GroupBox());
 			this->authorLabel = (gcnew System::Windows::Forms::Label());
-			this->welcomeLabel = (gcnew System::Windows::Forms::Label());
 			this->logInButton = (gcnew System::Windows::Forms::Button());
+			this->welcomeLabel = (gcnew System::Windows::Forms::Label());
 			this->loginGroup = (gcnew System::Windows::Forms::GroupBox());
 			this->signUp = (gcnew System::Windows::Forms::Button());
 			this->loginMessage = (gcnew System::Windows::Forms::Label());
@@ -89,8 +105,16 @@ namespace Project2 {
 			this->usernameBox = (gcnew System::Windows::Forms::TextBox());
 			this->loginLabel = (gcnew System::Windows::Forms::Label());
 			this->genericToolTip = (gcnew System::Windows::Forms::ToolTip(this->components));
+			this->signUpConfirmButton = (gcnew System::Windows::Forms::Button());
+			this->signUpGroup = (gcnew System::Windows::Forms::GroupBox());
+			this->signUpBackButton = (gcnew System::Windows::Forms::Button());
+			this->signUpConfirmPasswordBox = (gcnew System::Windows::Forms::TextBox());
+			this->signUpPasswordBox = (gcnew System::Windows::Forms::TextBox());
+			this->signUpUsernameBox = (gcnew System::Windows::Forms::TextBox());
+			this->signUpLabel = (gcnew System::Windows::Forms::Label());
 			this->startUpGroup->SuspendLayout();
 			this->loginGroup->SuspendLayout();
+			this->signUpGroup->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// quitButton
@@ -122,10 +146,10 @@ namespace Project2 {
 			// startUpGroup
 			// 
 			this->startUpGroup->Controls->Add(this->authorLabel);
-			this->startUpGroup->Controls->Add(this->welcomeLabel);
 			this->startUpGroup->Controls->Add(this->quitButton);
 			this->startUpGroup->Controls->Add(this->quickRenderButton);
 			this->startUpGroup->Controls->Add(this->logInButton);
+			this->startUpGroup->Controls->Add(this->welcomeLabel);
 			this->startUpGroup->Location = System::Drawing::Point(-7, -31);
 			this->startUpGroup->Name = L"startUpGroup";
 			this->startUpGroup->Size = System::Drawing::Size(1000, 500);
@@ -147,6 +171,19 @@ namespace Project2 {
 			this->authorLabel->UseCompatibleTextRendering = true;
 			this->authorLabel->UseMnemonic = false;
 			// 
+			// logInButton
+			// 
+			this->logInButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->logInButton->Location = System::Drawing::Point(25, 150);
+			this->logInButton->Name = L"logInButton";
+			this->logInButton->Size = System::Drawing::Size(300, 200);
+			this->logInButton->TabIndex = 2;
+			this->logInButton->Text = L"Login";
+			this->genericToolTip->SetToolTip(this->logInButton, L"Log in and access your saved objects.");
+			this->logInButton->UseVisualStyleBackColor = true;
+			this->logInButton->Click += gcnew System::EventHandler(this, &MyForm::loginButton_Click);
+			// 
 			// welcomeLabel
 			// 
 			this->welcomeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Pixel,
@@ -160,19 +197,6 @@ namespace Project2 {
 			this->welcomeLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->welcomeLabel->UseCompatibleTextRendering = true;
 			this->welcomeLabel->UseMnemonic = false;
-			// 
-			// logInButton
-			// 
-			this->logInButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->logInButton->Location = System::Drawing::Point(25, 150);
-			this->logInButton->Name = L"logInButton";
-			this->logInButton->Size = System::Drawing::Size(300, 200);
-			this->logInButton->TabIndex = 2;
-			this->logInButton->Text = L"Login";
-			this->genericToolTip->SetToolTip(this->logInButton, L"Log in and access your saved objects.");
-			this->logInButton->UseVisualStyleBackColor = true;
-			this->logInButton->Click += gcnew System::EventHandler(this, &MyForm::loginButton_Click);
 			// 
 			// loginGroup
 			// 
@@ -203,6 +227,7 @@ namespace Project2 {
 			this->signUp->Text = L"Sign Up";
 			this->genericToolTip->SetToolTip(this->signUp, L"Sign up to the application using your email and password");
 			this->signUp->UseVisualStyleBackColor = true;
+			this->signUp->Click += gcnew System::EventHandler(this, &MyForm::signUp_Click);
 			// 
 			// loginMessage
 			// 
@@ -287,12 +312,98 @@ namespace Project2 {
 			this->loginLabel->Text = L"Login Page";
 			this->loginLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// signUpConfirmButton
+			// 
+			this->signUpConfirmButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->signUpConfirmButton->Location = System::Drawing::Point(425, 225);
+			this->signUpConfirmButton->Name = L"signUpConfirmButton";
+			this->signUpConfirmButton->Size = System::Drawing::Size(150, 50);
+			this->signUpConfirmButton->TabIndex = 10;
+			this->signUpConfirmButton->Text = L"Sign Up";
+			this->genericToolTip->SetToolTip(this->signUpConfirmButton, L"Sign up to the application using your email and password");
+			this->signUpConfirmButton->UseVisualStyleBackColor = true;
+			// 
+			// signUpGroup
+			// 
+			this->signUpGroup->Controls->Add(this->signUpBackButton);
+			this->signUpGroup->Controls->Add(this->signUpConfirmButton);
+			this->signUpGroup->Controls->Add(this->signUpConfirmPasswordBox);
+			this->signUpGroup->Controls->Add(this->signUpPasswordBox);
+			this->signUpGroup->Controls->Add(this->signUpUsernameBox);
+			this->signUpGroup->Controls->Add(this->signUpLabel);
+			this->signUpGroup->Location = System::Drawing::Point(-7, -31);
+			this->signUpGroup->Name = L"signUpGroup";
+			this->signUpGroup->Size = System::Drawing::Size(1000, 500);
+			this->signUpGroup->TabIndex = 10;
+			this->signUpGroup->TabStop = false;
+			this->signUpGroup->Text = L"groupBox1";
+			this->signUpGroup->Visible = false;
+			// 
+			// signUpBackButton
+			// 
+			this->signUpBackButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->signUpBackButton->Location = System::Drawing::Point(25, 50);
+			this->signUpBackButton->Name = L"signUpBackButton";
+			this->signUpBackButton->Size = System::Drawing::Size(150, 50);
+			this->signUpBackButton->TabIndex = 11;
+			this->signUpBackButton->Text = L"Back";
+			this->signUpBackButton->UseVisualStyleBackColor = true;
+			this->signUpBackButton->Click += gcnew System::EventHandler(this, &MyForm::signUpBackButton_Click);
+			// 
+			// signUpConfirmPasswordBox
+			// 
+			this->signUpConfirmPasswordBox->Location = System::Drawing::Point(425, 175);
+			this->signUpConfirmPasswordBox->MaxLength = 20;
+			this->signUpConfirmPasswordBox->Name = L"signUpConfirmPasswordBox";
+			this->signUpConfirmPasswordBox->Size = System::Drawing::Size(150, 20);
+			this->signUpConfirmPasswordBox->TabIndex = 4;
+			this->signUpConfirmPasswordBox->Text = L"Confirm Password";
+			this->signUpConfirmPasswordBox->Enter += gcnew System::EventHandler(this, &MyForm::confirmPasswordBox_Enter);
+			this->signUpConfirmPasswordBox->Leave += gcnew System::EventHandler(this, &MyForm::confirmPasswordBox_Leave);
+			// 
+			// signUpPasswordBox
+			// 
+			this->signUpPasswordBox->Location = System::Drawing::Point(425, 150);
+			this->signUpPasswordBox->MaxLength = 20;
+			this->signUpPasswordBox->Name = L"signUpPasswordBox";
+			this->signUpPasswordBox->Size = System::Drawing::Size(150, 20);
+			this->signUpPasswordBox->TabIndex = 3;
+			this->signUpPasswordBox->Text = L"Password";
+			this->signUpPasswordBox->Enter += gcnew System::EventHandler(this, &MyForm::signUpPasswordBox_Enter);
+			this->signUpPasswordBox->Leave += gcnew System::EventHandler(this, &MyForm::signUpPasswordBox_Leave);
+			// 
+			// signUpUsernameBox
+			// 
+			this->signUpUsernameBox->Location = System::Drawing::Point(425, 125);
+			this->signUpUsernameBox->MaxLength = 20;
+			this->signUpUsernameBox->Name = L"signUpUsernameBox";
+			this->signUpUsernameBox->Size = System::Drawing::Size(150, 20);
+			this->signUpUsernameBox->TabIndex = 2;
+			this->signUpUsernameBox->Text = L"Username";
+			this->signUpUsernameBox->Enter += gcnew System::EventHandler(this, &MyForm::signUpUsernameBox_Enter);
+			this->signUpUsernameBox->Leave += gcnew System::EventHandler(this, &MyForm::signUpUsernameBox_Leave);
+			// 
+			// signUpLabel
+			// 
+			this->signUpLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Pixel,
+				static_cast<System::Byte>(0)));
+			this->signUpLabel->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->signUpLabel->Location = System::Drawing::Point(150, 50);
+			this->signUpLabel->Name = L"signUpLabel";
+			this->signUpLabel->Size = System::Drawing::Size(700, 70);
+			this->signUpLabel->TabIndex = 0;
+			this->signUpLabel->Text = L"Sign Up Here!";
+			this->signUpLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::AliceBlue;
 			this->ClientSize = System::Drawing::Size(984, 461);
+			this->Controls->Add(this->signUpGroup);
 			this->Controls->Add(this->loginGroup);
 			this->Controls->Add(this->startUpGroup);
 			this->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
@@ -305,6 +416,8 @@ namespace Project2 {
 			this->startUpGroup->ResumeLayout(false);
 			this->loginGroup->ResumeLayout(false);
 			this->loginGroup->PerformLayout();
+			this->signUpGroup->ResumeLayout(false);
+			this->signUpGroup->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -312,15 +425,19 @@ namespace Project2 {
 	private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		startUpGroup->Visible = false;
 		loginGroup->Visible = true;
+		// Switches tabs to the login section.
 	}
 	private: System::Void quickRenderButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("This has not yet been added to the application.","Pending Update", MessageBoxButtons::OK);
+		// Current placeholder for what needs adding.
+		pendingUpdate();
 	}
 
 	private: System::Void quitButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		// Simple quit button.
 		Close();
 	}
 
+// The following is literally just for "aesthetics". Makes the box clear when entered, makes it have placeholder text when not focused on and empty :)
 private: System::Void usernameBox_Enter(System::Object^ sender, System::EventArgs^ e) {
 	usernameBox->Text = "";
 }
@@ -339,12 +456,61 @@ private: System::Void passwordBox_Leave(System::Object^ sender, System::EventArg
 		passwordBox->Text = "Password";
 	}
 }
+private: System::Void confirmPasswordBox_Enter(System::Object^ sender, System::EventArgs^ e) {
+	signUpConfirmPasswordBox->PasswordChar = '*';
+	signUpConfirmPasswordBox->Text = "";
+}
+private: System::Void confirmPasswordBox_Leave(System::Object^ sender, System::EventArgs^ e) {
+	if (signUpConfirmPasswordBox->Text == "") {
+		signUpConfirmPasswordBox->PasswordChar = false;
+		signUpConfirmPasswordBox->Text = "Confirm Password";
+	}
+}
+private: System::Void signUpPasswordBox_Enter(System::Object^ sender, System::EventArgs^ e) {
+	signUpPasswordBox->PasswordChar = '*';
+	signUpPasswordBox->Text = "";
+}
+private: System::Void signUpPasswordBox_Leave(System::Object^ sender, System::EventArgs^ e) {
+	if (signUpPasswordBox->Text == "") {
+		signUpPasswordBox->PasswordChar = false;
+		signUpPasswordBox->Text = "Password";
+	}
+}
+private: System::Void signUpUsernameBox_Enter(System::Object^ sender, System::EventArgs^ e) {
+	signUpUsernameBox->Text = "";
+}
+private: System::Void signUpUsernameBox_Leave(System::Object^ sender, System::EventArgs^ e) {
+	if (signUpUsernameBox->Text == "") {
+		signUpUsernameBox->Text = "Username";
+	}
+}
+// End of the useless-ish code that allows for placeholder code in text boxes.
+
 private: System::Void loginBackButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	// This is the back button on the login page, makes the user go back to the start up menu.
 	loginGroup->Visible = false;
 	startUpGroup->Visible = true;
 }
 private: System::Void loginButton1_Click(System::Object^ sender, System::EventArgs^ e) {
-	loginMessage->Text = "Your username and password are incorrect";
+	// Login button on the login page.
+	pendingUpdate();
+	// loginMessage->Text = "Your username and password are incorrect";
+}
+
+private: System::Void signUp_Click(System::Object^ sender, System::EventArgs^ e) {
+	// Button on the login page, loads the sign up / register page.
+	loginGroup->Visible = false;
+	signUpGroup->Visible = true;
+}
+private: System::Void signUpBackButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	// Back button on the sign up / register page, loads the login page. 
+	loginGroup->Visible = true;
+	signUpGroup->Visible = false;
+}
+private: void pendingUpdate() {  // Will be re-used as a placeholder for all things that still need adding to the system.
+	MessageBox::Show("This has not yet been added to the application.", "Pending Update", MessageBoxButtons::OK);
 }
 };
 }
+
+
