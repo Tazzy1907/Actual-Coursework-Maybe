@@ -1,0 +1,29 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-185ef557b6c-40bb875a0a9cc269": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "CreatingDB.sql",
+			"save-password": true,
+			"configuration": {
+				"database": "C:\\Users\\TanLi\\OneDrive\\Desktop\\Actual Coursework Maybe\\Scripts\\CreatingDB.sql",
+				"url": "jdbc:sqlite:C:\\Users\\TanLi\\OneDrive\\Desktop\\Actual Coursework Maybe\\Scripts\\CreatingDB.sql",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
