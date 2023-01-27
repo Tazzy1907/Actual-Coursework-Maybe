@@ -1,0 +1,5 @@
+﻿  Database Access Project.cpp
+Database Access Project.obj : error LNK2019: unresolved external symbol sqlite3_close referenced in function main
+Database Access Project.obj : error LNK2019: unresolved external symbol sqlite3_open referenced in function main
+Database Access Project.obj : error LNK2019: unresolved external symbol sqlite3_errmsg referenced in function main
+C:\Users\TanLi\OneDrive\Desktop\Actual Coursework Maybe\x64\Debug\Database Access Project.exe : fatal error LNK1120: 3 unresolved externals
