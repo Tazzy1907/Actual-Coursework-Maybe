@@ -66,11 +66,6 @@ namespace Project2 {
 
 	private: System::Windows::Forms::TextBox^ signUpUsernameBox;
 
-
-
-
-
-
 	private: System::ComponentModel::IContainer^ components;
 	protected:
 
@@ -413,6 +408,7 @@ namespace Project2 {
 			this->MinimumSize = System::Drawing::Size(1000, 500);
 			this->Name = L"MyForm";
 			this->Text = L"My A-Level Coursework";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->startUpGroup->ResumeLayout(false);
 			this->loginGroup->ResumeLayout(false);
 			this->loginGroup->PerformLayout();
@@ -509,6 +505,8 @@ private: System::Void signUpBackButton_Click(System::Object^ sender, System::Eve
 }
 private: void pendingUpdate() {  // Will be re-used as a placeholder for all things that still need adding to the system.
 	MessageBox::Show("This has not yet been added to the application.", "Pending Update", MessageBoxButtons::OK);
+}
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
