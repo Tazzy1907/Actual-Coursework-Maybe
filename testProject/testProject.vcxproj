@@ -118,12 +118,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="form1.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="form2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="form1.resx">
+      <DependentUpon>form1.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

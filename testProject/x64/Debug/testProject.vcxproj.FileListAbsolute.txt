@@ -1,0 +1,4 @@
+C:\Users\TanLi\Desktop\Coursework Computing A Level\testProject\x64\Debug\testProject.vcxproj.AssemblyReference.cache
+C:\Users\TanLi\Desktop\Coursework Computing A Level\testProject\x64\Debug\testProject.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\TanLi\Desktop\Coursework Computing A Level\testProject\x64\Debug\testProject.form1.resources
+C:\Users\TanLi\Desktop\Coursework Computing A Level\testProject\x64\Debug\testProject.vcxproj.GenerateResource.cache

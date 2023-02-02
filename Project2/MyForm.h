@@ -334,6 +334,7 @@ namespace Project2 {
 			this->signUpGroup->TabStop = false;
 			this->signUpGroup->Text = L"groupBox1";
 			this->signUpGroup->Visible = false;
+			this->signUpGroup->Enter += gcnew System::EventHandler(this, &MyForm::signUpGroup_Enter);
 			// 
 			// signUpBackButton
 			// 
@@ -507,6 +508,8 @@ private: void pendingUpdate() {  // Will be re-used as a placeholder for all thi
 	MessageBox::Show("This has not yet been added to the application.", "Pending Update", MessageBoxButtons::OK);
 }
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void signUpGroup_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

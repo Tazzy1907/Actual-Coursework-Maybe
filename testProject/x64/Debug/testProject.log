@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\TanLi\Desktop\Coursework Computing A Level\testProject\main.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\TanLi\Desktop\Coursework Computing A Level\testProject\main.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  main.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  testProject.vcxproj -> C:\Users\TanLi\Desktop\Coursework Computing A Level\x64\Debug\testProject.exe
