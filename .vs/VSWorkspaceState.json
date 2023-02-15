@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Object Files",
+    "\\Rendering Aspect"
   ],
-  "SelectedNode": "\\A Level Coursework Project.sln",
+  "SelectedNode": "\\Rendering Aspect\\Rendering Aspect.cpp",
   "PreviewInSolutionExplorer": false
 }
