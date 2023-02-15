@@ -26,24 +26,29 @@ namespace testProject {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"label1";
 			// 
-			// MyForm
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(30, 30);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 1;
+			this->button1->Text = L"Go to Second Form";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// LoginForm
 			// 
 			this->ClientSize = System::Drawing::Size(400, 300);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
-			this->Name = L"MyForm";
+			this->Name = L"LoginForm";
 			this->Text = L"My Form";
+			this->Load += gcnew System::EventHandler(this, &LoginForm::LoginForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
-			this->button1->Location = System::Drawing::Point(30, 30);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->Text = L"Go to Second Form";
-			this->button1->UseVisualStyleBackColor = true;
-
-
 		}
 
+	private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }

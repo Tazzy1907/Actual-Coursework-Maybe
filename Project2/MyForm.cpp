@@ -1,7 +1,5 @@
 #include "MyForm.h";
 
-
-using namespace System::Data::SqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]

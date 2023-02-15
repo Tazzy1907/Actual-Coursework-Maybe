@@ -1,2 +1,12 @@
-﻿  Database Access Project.cpp
+﻿  accessObjects.cpp
+  Database Access Project.cpp
+  createTables.cpp
+C:\Users\TanLi\OneDrive\Desktop\Actual Coursework Maybe\Database Access Project\createTables.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\TanLi\OneDrive\Desktop\Actual Coursework Maybe\Database Access Project\createTables.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  accessTables.cpp
+  Generating Code...
+  shell.c
+  sqlite3.c
+  Generating Code...
+LINK : warning LNK4067: ambiguous entry point; selected 'mainCRTStartup'
   Database Access Project.vcxproj -> C:\Users\TanLi\OneDrive\Desktop\Actual Coursework Maybe\Debug\Database Access Project.exe

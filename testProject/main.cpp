@@ -1,9 +1,12 @@
 #include "form1.h";
 #include "form2.h";
+#include <iostream>;
+#include <string>;
+#include <stdio.h>;
 
 using namespace System;
 using namespace System::Windows::Forms;
-
+using namespace System::Data::SqlClient;
 
 ref class MyApp {
 public: 
@@ -22,14 +25,11 @@ public:
 
 [STAThread]
 
-int main(array<String^>^ args) {
+int main(array<String^>^ args) { // Where the forms are loaded.
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
 	MyApp^ app;
-
-	app = gcnew MyApp();
-
 	Application::Run(app->form1);
 
 	return 0;

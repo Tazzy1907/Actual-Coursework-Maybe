@@ -11,6 +11,10 @@
  *  columns - The column names
  */
 
+using namespace std;
+// using namespace System;
+// using namespace System::Windows::Forms;
+
 
 
 static int callback(void* unused, int numCol, char** data, char** columns) {
@@ -23,28 +27,39 @@ static int callback(void* unused, int numCol, char** data, char** columns) {
 
     printf("\n");
     return 0;
-}
+};
 
-/*
-int main(int argc, char** argv)
-{
-    sqlite3* DB;
+// string processData() {
 
-    sqlite3_stmt* stmt;
-    const char* sql = "SELECT ID, Name FROM User";
-    int rc = sqlite3_prepare_v2(DB, sql, -1, &stmt, NULL);
-    if (rc != SQLITE_OK) {
-        printf("error: ", sqlite3_errmsg(DB));
-        return;
-    }
-    while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
-        int id = sqlite3_column_int(stmt, 0);
-        const char* name = sqlite3_column_text(stmt, 1);
-        // ...
-    }
-    if (rc != SQLITE_DONE) {
-        printf("error: ", sqlite3_errmsg(DB));
-    }
-    sqlite3_finalize(stmt);
-}
-*/
+// };
+
+//int main(int argc, char** argv) {
+//    sqlite3* db;
+//    int exit = 0;
+//    exit = sqlite3_open("testDB.db", &db);
+//
+//    string data = ("CALLBACK FUNCTION");
+//
+//    string sql = ("SELECT * FROM Accounts;");
+//
+//    if (exit) {
+//        std::cerr << "Error opening DB" << sqlite3_errmsg(db) << std::endl;
+//        return (-1);
+//    }
+//    else {
+//        std::cout << "OPENED DATABASE SUCCESSFULLY" << std::endl;
+//    }
+//
+//    int rc = sqlite3_exec(db, sql.c_str(), callback, (void*)data.c_str(), NULL);
+//
+//    if (rc != SQLITE_OK) {
+//        cerr << "Error SELECT" << endl;
+//    }
+//    else {
+//        cout << "Operation OK" << endl;
+//    }
+//
+//    sqlite3_close(db);
+//
+//    return (0);
+//}
