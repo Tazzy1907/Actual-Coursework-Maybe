@@ -1,0 +1,8 @@
+﻿  Rendering Aspect.cpp
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(163,43): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(163,22): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(162,43): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(162,22): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(161,55): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(161,34): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+  Rendering Aspect.vcxproj -> C:\Users\TanLi\Desktop\Coursework Computing A Level\x64\Debug\Rendering Aspect.exe
