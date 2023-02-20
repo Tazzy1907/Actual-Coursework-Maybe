@@ -1,14 +1,25 @@
 ﻿  Rendering Aspect.cpp
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(226,44): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(226,23): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(225,44): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(225,23): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(224,56): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(224,35): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(231,45): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(231,24): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(230,45): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(230,24): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(229,57): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(229,36): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
-  Rendering Aspect.vcxproj -> C:\Users\TanLi\Desktop\Coursework Computing A Level\x64\Debug\Rendering Aspect.exe
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(46,1): error C2664: 'void stdVals::createProj(matrix4x4 &,float,float,float,float)': cannot convert argument 1 from 'const matrix4x4' to 'matrix4x4 &'
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(46,14): message : Conversion loses qualifiers
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\math functions.h(95,7): message : see declaration of 'stdVals::createProj'
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(47,1): error C2664: 'void stdVals::createRotX(matrix4x4 &,float)': cannot convert argument 1 from 'const matrix4x4' to 'matrix4x4 &'
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(47,14): message : Conversion loses qualifiers
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\math functions.h(104,7): message : see declaration of 'stdVals::createRotX'
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(48,1): error C2664: 'void stdVals::createRotY(matrix4x4 &,float)': cannot convert argument 1 from 'const matrix4x4' to 'matrix4x4 &'
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(48,14): message : Conversion loses qualifiers
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\math functions.h(113,7): message : see declaration of 'stdVals::createRotY'
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(49,1): error C2664: 'void stdVals::createRotZ(matrix4x4 &,float)': cannot convert argument 1 from 'const matrix4x4' to 'matrix4x4 &'
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(49,14): message : Conversion loses qualifiers
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\math functions.h(122,7): message : see declaration of 'stdVals::createRotZ'
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(128,43): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(128,22): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(127,43): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(127,22): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(126,55): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(126,34): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(133,44): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(133,23): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(132,44): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(132,23): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(131,56): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\TanLi\Desktop\Coursework Computing A Level\Rendering Aspect\Rendering Aspect.cpp(131,35): warning C4244: 'argument': conversion from 'float' to 'int32_t', possible loss of data

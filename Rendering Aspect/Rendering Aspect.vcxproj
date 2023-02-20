@@ -142,6 +142,7 @@
     <ClCompile Include="Rendering Aspect.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="math functions.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
